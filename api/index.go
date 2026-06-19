@@ -61,14 +61,18 @@ func dashboardHTML() string {
         </div>
         
         <div class="card">
-            <h2>Riwayat Pengalaman</h2>
-            <ul>
-                <li><b>Math Tutor (Online)</b>, Algonova (Mar 2026-Sekarang)</li>
-                <li><b>Guru Matematika</b>, SMA IT Al Binaa (Sept 2022-Jun 2026)</li>
-                <li><b>Master Teacher</b>, Brain Academy by Ruangguru (Okt-Des 2023)</li>
-                <li><b>Asisten Dosen</b>, UNM (Okt 2018-Sept 2022)</li>
-            </ul>
-        </div>
+    <h2>Video Pembelajaran</h2>
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/_3pqgVhtDBg?si=eeZbA14kKCFBSs2O" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
 
         <div class="card">
             <h2>Video Pembelajaran</h2>
