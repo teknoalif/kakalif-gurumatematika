@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+// Handler utama untuk Vercel
 func Handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
@@ -37,10 +38,24 @@ func dashboardHTML() string {
         .btn-yt { background: #0EA5E9; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 800; display: inline-block; margin: 5px; }
         .btn-nav { background: rgba(255,255,255,0.1); color: white; padding: 8px 16px; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.9rem; margin: 0 5px; }
         
-        /* FIX VIDEO: Menggunakan height auto dan memaksa iframe fill */
-        .video-container { width: 100%; border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
-        .video-container iframe { width: 100%; height: 100%; border: 0; display: block; }
-        
+        /* FIX VIDEO: Menggunakan teknik padding-top untuk menjaga rasio 16:9 yang sempurna */
+        .video-container { 
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* Rasio 16:9 = 9/16 */
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        .video-container iframe { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
     </style>
@@ -59,15 +74,14 @@ func dashboardHTML() string {
     <div class="main-wrapper">
         <div class="card">
             <h2>Profil (ID / AR)</h2>
-            <p><b>ID:</b> Muslim & Fullstack Developer, berfokus pada edukasi Islam, Matematika, dan Teknologi.</p>
-            <p dir="rtl" style="text-align:right;"><b>AR:</b> أنا مسلم ومطور برمجيات متكامل، وأسعى بإذن الله إلى تعليم المجتمع عن الإسلام والرياضيات والتكنولوجيا.</p>
+            <p><b>ID:</b> Guru Matematika, Penulis Buku & Pengembang Website, berfokus pada edukasi ilmu yang bermanfaat untuk anak-anak usia 5 hingga 17 tahun.</p>
         </div>
         
         <div class="card">
             <h2>Riwayat Pengalaman</h2>
             <ul>
-                <li><b>Math Tutor (Online)</b>, Algonova (Mar 2026-Sekarang)</li>
-                <li><b>Guru Matematika</b>, SMA IT Al Binaa (Sept 2022-Jun 2026)</li>
+                <li><b>Math Tutor (Online)</b>, Algonova (5 Mar 2026-Present)</li>
+                <li><b>Guru Matematika</b>, SMA IT Al Binaa (24 Sept 2022-17 Jun 2026)</li>
                 <li><b>Master Teacher</b>, Brain Academy by Ruangguru (Okt-Des 2023)</li>
                 <li><b>Asisten Dosen</b>, UNM (Okt 2018-Sept 2022)</li>
             </ul>
@@ -78,9 +92,9 @@ func dashboardHTML() string {
             <div class="video-container">
                 <iframe 
                     src="https://www.youtube.com/embed/_3pqgVhtDBg" 
-                    title="YouTube video player" 
-                    frameborder="0" 
+                    title="Video Pembelajaran" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
                     allowfullscreen>
                 </iframe>
             </div>
