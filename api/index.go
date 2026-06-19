@@ -5,7 +5,6 @@ import (
 	"net/http"
 )
 
-// Handler utama untuk Vercel
 func Handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
@@ -35,10 +34,13 @@ func dashboardHTML() string {
         .main-wrapper { max-width: 800px; margin: -40px auto 0; padding: 0 20px; }
         .card { background: white; padding: 30px; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
         h2 { color: #800000; font-weight: 900; border-left: 6px solid #800000; padding-left: 15px; margin-top: 0; font-size: 1.25rem; }
-        .btn-yt { background: #0EA5E9; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 800; display: inline-block; margin: 5px; transition: opacity 0.2s; }
+        .btn-yt { background: #0EA5E9; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 800; display: inline-block; margin: 5px; }
         .btn-nav { background: rgba(255,255,255,0.1); color: white; padding: 8px 16px; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.9rem; margin: 0 5px; }
-        .video-container { width: 100%; border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; display: block; }
+        
+        /* FIX VIDEO: Menggunakan height auto dan memaksa iframe fill */
+        .video-container { width: 100%; border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
         .video-container iframe { width: 100%; height: 100%; border: 0; display: block; }
+        
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
     </style>
@@ -72,19 +74,17 @@ func dashboardHTML() string {
         </div>
 
         <div class="card">
-    <h2>Video Pembelajaran</h2>
-    <div class="video-container">
-        <iframe 
-            src="https://www.youtube.com/embed/_3pqgVhtDBg?si=eeZbA14kKCFBSs2O" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen 
-            loading="lazy">
-        </iframe>
-    </div>
-</div>
+            <h2>Video Pembelajaran</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/_3pqgVhtDBg" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
     </div>
 </body>
 </html>`
