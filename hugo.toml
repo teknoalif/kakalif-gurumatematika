@@ -35,7 +35,7 @@ theme = 'PaperMod'
     # Tombol 4: Link ke Website Utama (Next.js)
     [[params.profileMode.buttons]]
         name = "🌐 kakalif.my.id"
-        url = "https://kakalif.my.id"
+        url = "https://kakalif.jamia.id/portofolio"
 
     # Tombol 5: Link ke Jamia
     [[params.profileMode.buttons]]
