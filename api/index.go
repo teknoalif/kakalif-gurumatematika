@@ -86,19 +86,6 @@ func dashboardHTML() string {
                 <li><b>Asisten Dosen</b>, UNM (Okt 2018-Sept 2022)</li>
             </ul>
         </div>
-
-        <div class="card">
-            <h2>Video Pembelajaran</h2>
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/_3pqgVhtDBg" 
-                    title="Video Pembelajaran" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
     </div>
 </body>
 </html>`
