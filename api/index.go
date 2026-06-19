@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-// Handler utama untuk menangani routing di Vercel
+// Handler utama untuk Vercel
 func Handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
@@ -29,17 +29,19 @@ func dashboardHTML() string {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alif Rezky, M.Pd - Portofolio</title>
     <style>
-        body { font-family: system-ui, sans-serif; background: #F1F5F9; margin: 0; padding-bottom: 50px; }
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: #F1F5F9; margin: 0; padding-bottom: 50px; color: #1e293b; }
         .hero { background: #0F172A; padding: 60px 20px; color: white; text-align: center; }
-        .main-wrapper { max-width: 900px; margin: -40px auto 0; padding: 0 20px; }
-        .card { background: white; padding: 30px; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.03); }
-        h2 { color: #800000; font-weight: 900; border-left: 6px solid #800000; padding-left: 15px; margin-top: 0; }
-        .btn-yt { background: #0EA5E9; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 800; display: inline-block; margin: 5px; }
-        .btn-nav { background: transparent; color: white; padding: 8px 16px; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.9rem; margin: 0 5px; }
+        .main-wrapper { max-width: 800px; margin: -40px auto 0; padding: 0 20px; }
+        .card { background: white; padding: 30px; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        h2 { color: #800000; font-weight: 900; border-left: 6px solid #800000; padding-left: 15px; margin-top: 0; font-size: 1.25rem; }
+        .btn-yt { background: #0EA5E9; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 800; display: inline-block; margin: 5px; transition: opacity 0.2s; }
+        .btn-nav { background: rgba(255,255,255,0.1); color: white; padding: 8px 16px; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.9rem; margin: 0 5px; }
         
-        /* Modern Aspect Ratio untuk Video */
-        .video-container { width: 100%; border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
-        .video-container iframe { width: 100%; height: 100%; border: 0; }
+        .video-container { width: 100%; border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; display: block; }
+        .video-container iframe { width: 100%; height: 100%; border: 0; display: block; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -48,8 +50,8 @@ func dashboardHTML() string {
         <p>Mathematics Educator | Tech Developer | Author</p>
         <a href="https://youtube.com/@kakalifgurumatematika" class="btn-yt">YouTube Channel 📺</a>
         <div style="margin-top:20px;">
-            <a href="/buku" class="btn-nav">Katalog Buku 📚</a>
-            <a href="/jasa/alalify-tech" class="btn-nav">Jasa Al Alify Tech 🛠️</a>
+            <a href="kakalif.jamia.id/buku" class="btn-nav">Katalog Buku 📚</a>
+            <a href="kakalif.jamia.id/koding" class="btn-nav">Jasa Al Alify Tech 🛠️</a>
         </div>
     </div>
 
@@ -61,23 +63,26 @@ func dashboardHTML() string {
         </div>
         
         <div class="card">
-    <h2>Video Pembelajaran</h2>
-    <div class="video-container">
-        <iframe 
-            src="https://www.youtube.com/embed/_3pqgVhtDBg?si=eeZbA14kKCFBSs2O" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-        </iframe>
-    </div>
-</div>
+            <h2>Riwayat Pengalaman</h2>
+            <ul>
+                <li><b>Math Tutor (Online)</b>, Algonova (Mar 2026-Sekarang)</li>
+                <li><b>Guru Matematika</b>, SMA IT Al Binaa (Sept 2022-Jun 2026)</li>
+                <li><b>Master Teacher</b>, Brain Academy by Ruangguru (Okt-Des 2023)</li>
+                <li><b>Asisten Dosen</b>, UNM (Okt 2018-Sept 2022)</li>
+            </ul>
+        </div>
 
         <div class="card">
             <h2>Video Pembelajaran</h2>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/_3pqgVhtDBg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video Pembelajaran"></iframe>
+                <iframe 
+                    src="https://www.youtube.com/embed/_3pqgVhtDBg?si=eeZbA14kKCFBSs2O" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </div>
