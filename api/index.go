@@ -72,18 +72,19 @@ func dashboardHTML() string {
         </div>
 
         <div class="card">
-            <h2>Video Pembelajaran</h2>
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/_3pqgVhtDBg?si=EZ2hMdRXkQgL4sxu" 
-                    title="YouTube video player" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen 
-                    loading="lazy">
-                </iframe>
-            </div>
-        </div>
+    <h2>Video Pembelajaran</h2>
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/_3pqgVhtDBg?si=eeZbA14kKCFBSs2O" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
     </div>
 </body>
 </html>`
