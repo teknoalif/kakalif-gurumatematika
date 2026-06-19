@@ -50,8 +50,8 @@ func dashboardHTML() string {
         <p>Mathematics Educator | Tech Developer | Author</p>
         <a href="https://youtube.com/@kakalifgurumatematika" class="btn-yt">YouTube Channel 📺</a>
         <div style="margin-top:20px;">
-            <a href="kakalif.jamia.id/buku" class="btn-nav">Katalog Buku 📚</a>
-            <a href="kakalif.jamia.id/koding" class="btn-nav">Jasa Al Alify Tech 🛠️</a>
+            <a href="https://kakalif.jamia.id/buku" class="btn-nav">Katalog Buku 📚</a>
+            <a href="https://kakalif.jamia.id/koding" class="btn-nav">Jasa Al Alify Tech 🛠️</a>
         </div>
     </div>
 
